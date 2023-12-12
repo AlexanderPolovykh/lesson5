@@ -26,7 +26,7 @@ def find_user(users: list, id: int) -> dict:
 
 @app.get("/")
 def start():
-    with open("user.json", mode="rt") as fread:
+    with open("../user.json", mode="rt") as fread:
         users = json.load(fread)
     resp = redirect(url_for("users_get"), code=302)
     resp.set_cookie('users', json.dumps(users))
