@@ -1,0 +1,24 @@
+{% if messages %}
+<ul class="flashes">
+  {% for category, message in messages %}
+  <li class="{{ category }}">{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+<ul>
+  {% for user in users %}
+  <li>
+    <a href="{{ url_for('user_get', id=user.id) }}">{{ user.nickname }}</a>
+    <div>ID {{ user.id }} Email {{ user.email }}</div>
+    <a href="{{ url_for('user_edit', id=user.id) }}">update</a>
+    <form
+      action="{{ url_for('delete_user', id=user.id) }}"
+      method="post"
+      onsubmit="return confirm('Are you sure you want to delete User? This action cannot be undone.');"
+    >
+      <input type="submit" value="Delete" />
+    </form>
+  </li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('user_new') }}">Создать нового пользователя</a>

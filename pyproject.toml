@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "lesson5"
+version = "0.1.0"
+description = ""
+authors = ["polovykh <polovykh@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+gunicorn = "^21.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+flask = "^3.0.0"
+black = "^23.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

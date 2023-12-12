@@ -1,0 +1,9 @@
+<a href="{{ url_for('users_get') }}">Список пользователей</a>
+<div><br /></div>
+{% if errors['id'] %}
+<div>{{ errors['id'] }}</div>
+{% else %}
+<h2>id = {{ user.id }}</h2>
+<div>nickname = {{ user.nickname }}</div>
+<div>email = {{ user.email }}</div>
+{% endif %}
